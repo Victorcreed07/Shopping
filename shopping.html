@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shopping cart</title>
+  
+    <script src="https://kit.fontawesome.com/6f94d30cd9.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Redressed&display=swap" rel="stylesheet">
+// Using local storage to get the value from the cart and send to checkout
+    <script type="text/javascript">
+      function func1()
+      {
+        var value1=100;
+        window.localStorage.setItem("value1","100");
+      }
+      function func2()
+      {
+        var value2=70;
+        window.localStorage.setItem("value2","70");
+      }
+      function func3()
+      {
+        var value3=120;
+        window.localStorage.setItem("value3","120");
+      }
+      function func4()
+      {
+        var value4=150;
+        window.localStorage.setItem("value4","150");
+      }
+      let url= new URL('file:///C:/Users/Admin/Desktop/exp3/credit.html?value=value1');
+
+  </script>
+  <style>
+
+    #ola {
+        background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+         border: 2px solid black;
+        padding: 25px;
+        background-repeat: no-repeat;
+        background-size: 1370px 300px;
+      }
+  .topnav {
+      background-color:purple;
+      overflow: hidden;
+      }
+      .topnav a {
+           float: left;
+           color: #f2f2f2;
+              text-align: center;
+              padding: 16px 16px;
+              text-decoration: none;
+              font-size: 20px;
+            }
+
+/* Change the color of links on hover */
+      .topnav a:hover {
+            background-color:Tomato;
+           color: black;
+            }
+
+/* Add a color to the active/current link */
+      .topnav a.active {
+         background-color:gold;
+          color: black;
+            }
+.topnav .fembme {
+    font-size: 10px;
+    visibility: hidden;
+        
+        
+    color:black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+  /* Position the tooltip */
+  position: relative;
+  z-index: 1;
+  top: -2px;
+       
+       
+}
+
+.topnav a:hover .fembme {
+    visibility: visible;
+  }
+
+  body {
+  font-family: Arial;
+  color: white;
+}
+
+.split {
+  height: 55%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 40%;
+  overflow-x: hidden;
+  padding-top: 20px;
+  margin-right: 8.5px;
+  margin-left:8.25px;
+
+}
+
+.left {
+  left: 0;
+  background-color:white;
+}
+
+.right {
+  right: 0;
+  background-color:white;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+}
+.another
+{
+  position: absolute;
+  top: 50%;
+  left: 69%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.another2
+{
+  position: absolute;
+  top: 50%;
+  left: 69%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.center {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+}
+.tag
+{
+  z-index:2;
+  color:black;
+  position: absolute;
+  top: 50%;
+  left: 65%;
+  font-size: 17px;
+  
+
+  
+}
+.meep
+{
+  z-index:2;
+  color:black;
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  font-size: 17px;
+  
+
+  
+}
+
+
+  .centered img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+}
+.another img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+}
+.another2 img {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+}
+.center img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+}
+#button1
+{
+  position: relative;
+  top:260px;
+  left: 90px;
+}
+#button2
+{
+  position: relative;
+  top:260px;
+  left: 370px;
+}
+#button3
+{
+  position: relative;
+  top:260px;
+  left: 100px;
+}
+#button4
+{
+  position: relative;
+  top:260px;
+  left: 370px;
+}
+.button51
+{
+  position: absolute;
+  right:0px;
+  left:600px;
+}
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.button2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+
+
+
+
+    
+    
+  </style>
+</head>
+<body>
+// Some random images and their prices
+  <div id="ola"style="color:Dodgerblue;">
+  <i class="fab fa-battle-net fa-7x" >Prisma</i>
+</div>
+
+  <div class="topnav">
+  <a  href="#home"><i class="fas fa-mars fa-2x"><span class="fembme">Male</span></i></a>
+  <a href="#news"><i class="fas fa-venus fa-2x"><span class="fembme">Female</span></i></a>
+  <a href="#contact"><i class="fas fa-baby fa-2x"><span class="fembme">Kid</span></i></a>
+  <a href="#about"><i class="fas fa-house-user fa-2x"><span class="fembme">Family</span></i></a>
+
+
+</div>
+<div class="split left">
+  <div class="centered">
+    <img src="https://www.kroger.com/product/images/large/front/0008613891810" alt="Avatar woman">
+    <i class="fas fa-tag fa-3x  tag">Price: 100$<br> &emsp;Available</i>
+    
+    
+  </div>
+  <div class="another">
+    <img src="https://www.kroger.com/product/images/xlarge/front/0008613891499" alt="Avatar woman">
+    <i class="fas fa-tag fa-3x  meep">Price: 70$<br> &emsp;Available</i>
+
+  </div>
+  <form action="credit.html">
+  <input type="button" name="cart" value="addtocart" onclick="func1();" id="button1">
+   <input type="button" name="cart" value="addtocart" onclick="func2();"id="button2">
+   <input type="submit" class="button51  button button2" value="PAY">
+</div>
+
+
+<div class="split right">
+  <div class="center">
+    <img src="https://www.kroger.com/product/images/large/front/0008613891827" alt="">
+    <i class="fas fa-tag fa-3x  meep">Price: 120$<br> &emsp;Available</i>
+    
+  </div>
+   <div class="another2">
+    <img src="https://www.kroger.com/product/images/large/front/0008613892109" alt="Avatar woman">
+    <i class="fas fa-tag fa-3x  meep">Price: 150$<br> &emsp;Available</i>
+
+  </div>
+  <input type="button" name="cart" value="addtocart" onclick="func3();"id="button3">
+   <input type="button" name="cart" value="addtocart"onclick="func4();" id="button4">
+</div>
+</form>
+
+
+
+
+
+</body>
+</html>

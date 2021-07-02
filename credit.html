@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <title>CREDIT</title>
+  <h2>YOUR GRAND TOTAL IS</h2>
+
+  <script type="text/javascript">
+    var value1=window.localStorage.getItem('value1');
+    window.localStorage.removeItem('value1');
+    var value2=window.localStorage.getItem('value2');
+    window.localStorage.removeItem('value2');
+    var value3=window.localStorage.getItem('value3');
+    window.localStorage.removeItem('value3');
+    var value4=window.localStorage.getItem('value4');
+    window.localStorage.removeItem('value4');
+    var total=0;
+    var num1=0,num2=0,num3=0,num4=0;
+    
+
+    if(value1 != null )
+    {
+       total=total+parseInt(value1);
+    }
+    if(value2 != null )
+    {
+       total=total+parseInt(value2);
+    }
+    if(value3 != null )
+    {
+       total=total+parseInt(value3);
+    }
+    if(value4 != null )
+    {
+      total=total+parseInt(value4);
+    }
+
+    //Creating sum of the vaues
+    
+    var meow = total.toString(); 
+    document.write(meow);
+    // Validation for credit card and cvv number
+    function payment()
+    {
+      var meep=document.getElementById("name").value;
+      var jeep=document.getElementById("endname").value;
+      var keep=document.getElementById("cvv").value;
+
+      if ( (meep.length) == 16 && jeep != "" && (keep.length) == 3)
+      {
+      alert("Payment successfull");
+      document.getElementById("pay1").innerHTML="<a href='index.html'>Return to Registration</a>";
+      }
+      else
+      {
+        alert("Payment not successfull");
+      }
+    }
+    function cantgo()
+    {
+      document.getElementById("danger").innerHTML="You cant do that silly";
+    }
+
+  </script>
+</head>
+<body>
+  <div class="results">
+
+  </div>
+  <div class="container">
+    <div class="jumbotron">
+  <center>
+      <h1 style="color: tomato;">Checkout</h1>
+      <h3>Credit Card Details</h3>
+
+      <form action="index.html">
+        <label for="card">Enter Card Number</label>
+        <input type="Number" name="card" id="name" placeholder="Card number" pattern=".{16}" required >
+        
+        <br>
+        <br>
+
+        <label for="endname">Enter Card Name</label>
+        <input type="text" name="endname" id="endname" required >
+
+        <br>
+        <br>
+
+        <label for="cvv">Enter CVV number</label>
+        <input type="number" name="cvv" id="cvv" placeholder="CVV"  pattern=".{3}"  required>
+        
+        <br>
+        <br>
+
+        <input type="radio" name="cname" id="visa" required>
+        <label for="visa">VISA</label>
+
+        <br>
+
+        <input type="radio" name="cname" id="master">
+        <label for="master">MASTER</label>
+
+        <br>
+
+        
+        <br>
+
+        <input type="button" name="button" class="btn btn-info" value="Pay" onclick="payment();">
+
+        <br>
+        <div class="alert alert-success">
+       <strong> <h4 id="pay1"></h4></strong>
+       </div>
+      </form>
+    </center>
+    </div>
+    <footer align="center">
+  
+  <ul class="pagination"  >
+  <li ><a href="index.html">1</a></li>
+  <li><a href="login.html" >2</a></li>
+  <li><a href="shopping.html">3</a></li>
+  <li class="active"><a href="credit.html" >4</a></li>
+  
+</ul>
+
+<div class="alert alert-danger" id="danger">
+  
+</div>
+</footer>
+
+</div>
+
+  
+  
+  
+  
+
+</body>
+</html>

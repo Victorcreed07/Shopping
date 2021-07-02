@@ -1,0 +1,225 @@
+<html>
+  <head>
+  	<title>Hello</title>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <h1 style="color: red" align="center">Registration Page</h1>
+    <style type="text/css">
+      body
+      {
+        background-image: url("https://media.istockphoto.com/photos/register-online-picture-id869283118?k=6&m=869283118&s=612x612&w=0&h=CSMDQten6MWctMIMEoPuN_s0MbAV_rLPvwuHMJlSKgY=");
+        background-size: cover;
+
+      }
+      form
+      {
+        color:radial-gradient(red, orange, pink);
+      }
+      #cox
+      {
+        background: white;
+        padding: 20px; 
+         width: 350px;
+        height: 320px;
+        opacity:0.5;
+      }
+      #name
+      {
+        box-shadow: 5px 5px dodgerblue;
+        
+      }
+      #email
+      {
+        box-shadow: 5px 5px dodgerblue;
+        
+      }
+      #pass
+      {
+        box-shadow: 5px 5px tomato;
+        
+      }
+      #repass
+      {
+          box-shadow: 5px 5px tomato;
+        
+
+      }
+      
+      #Button2
+      {
+
+  background-color: black; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+      
+    </style>
+    <script type="text/javascript">
+
+      
+
+
+
+
+
+
+      var info = new array();
+info[0]=document.getElementById('name').value;
+info[1]=document.getElementById('email').value;
+info[2]=document.getElementById('pass').value;
+info[3]=document.getElementById('repass').value;
+function validateForm() {
+  var password = document.getElementById("pass").value;
+      var repassword=document.getElementById("repass").value;
+      var name=document.getElementById("name").value;
+      if (name==""){
+          alert("Username is necessary");
+           return false;
+          
+          
+      }
+      var email=document.getElementById("email").value;
+      if (email==""){
+          alert("Email is necessary");
+          return false;
+          
+          
+      }
+      var pass=document.getElementById("pass").value;
+       if (pass==""){
+          alert("Password is necessary");
+          return false;
+          
+          
+      }
+      if(password != repassword)
+    {
+      alert("Passwords dont match");
+      return false;
+      
+    
+    }
+    var cap=document.getElementById("txtInput").value;
+    if( cap == "")
+    {
+      alert("Enter Captcha");
+      return false;
+    }
+    var string1 =document.getElementById('mainCaptcha').innerHTML;
+
+     var string2 =  document.getElementById('txtInput').value;
+     if (string1 == string2){
+      document.getElementById('error').innerHTML="Carryon";
+            
+     }else{     
+          document.getElementById('error').innerHTML="Enter valid Captcha";
+          return false;
+          
+          }
+    
+
+
+    }
+    function cantgo()
+    {
+      document.getElementById("danger").innerHTML="You cant do that silly";
+    }
+   
+    
+
+
+
+      function Captcha(){
+     var alpha = new Array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',
+    'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z', 
+        '0','1','2','3','4','5','6','7','8','9');
+     var i;
+     
+         var a = alpha[Math.floor(Math.random() * alpha.length)];
+         var b = alpha[Math.floor(Math.random() * alpha.length)];
+         var c = alpha[Math.floor(Math.random() * alpha.length)];
+         var d = alpha[Math.floor(Math.random() * alpha.length)];
+         var e = alpha[Math.floor(Math.random() * alpha.length)];
+         var f = alpha[Math.floor(Math.random() * alpha.length)];
+         var g = alpha[Math.floor(Math.random() * alpha.length)];
+                      
+         var code = a +  b +  c + d +  e + f +  g;
+         document.getElementById("mainCaptcha").innerHTML = code
+     
+       }
+
+
+
+
+
+
+
+    </script>
+    
+  </head>
+  <center>
+  
+    <body onload="Captcha();"> 
+      <div class="container">
+        
+    <div id="cox">
+      <form action="login.html"onsubmit=" return validateForm();" required >
+        <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <p>&nbsp; Name:<input type="text" id="name" name='name'></p>
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+    <p>&emsp;Email:<input type="email" id="email"name='email'></p>
+  </div>
+    <p>&emsp;&ensp;Password:<input type="Password" id="pass"name='pass'></p>
+    <p>RE-Password:<input type="Password" id="repass"name='repass'></p>
+      
+   <div id="float">
+   <h2 type="text" id="mainCaptcha"></h2>
+   <p><input type="button" id="refresh" onclick="Captcha();"/></p>          
+     <input type="text" id="txtInput"/>    
+     <p id='error'></p>
+   
+</div>
+</div>
+<br>
+<br>
+<input id="Button2"type="submit" value="Register">
+   </form>
+   </center>
+ 
+
+<footer align="center">
+  
+  <ul class="pagination"  >
+  <li class="active"><a href="index.html">1</a></li>
+  <li><a href="#" onclick="cantgo();">2</a></li>
+  <li><a href="#" onclick="cantgo();">3</a></li>
+  <li ><a href="#" onclick="cantgo();">4</a></li>
+  
+</ul>
+
+<div class="alert alert-danger" id="danger">
+  
+</div>
+</footer>
+</div>
+
+
+  
+
+  		
+  	
+    
+    
+  
+  
+  </body>
+  </html>
